@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skills</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  <div class="container" style="padding-top: 10px;">
+    
+    <div class="col">
+        <div class="row text-center" style="padding: 10px;">
+            <h2>check my skills from my cv:</h2>
+        </div>
+    
+        <div class="row" style="padding: 10px;">
+            <div class="col-sm d-flex justify-content-center" style="padding: 10px;">
+                <div>
+                    <button type="button" class="btn btn-secondary" onclick="getAll()">get all skills</button>
+                </div> 
+            </div>
+            <div class="col-sm" style="padding: 10px;">
+                <div class="input-group mb-3 ">
+                    <button class="btn btn-secondary" type="button" onclick="getSome()"
+                        data-bs-toggle="tooltip" data-bs-placement="top" 
+                        title="this option is for testing purposes only, it doesn't make a lot of sense ;)">
+                        get skills with a letter of your choice:</button>
+                    <input type="text" class="form-control" placeholder="" id="someLetters">
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="display: none" id="skillsAnswer">
+            <h3>skills from CV:</h2>
+            <div></div>
+        </div>
+
+        <div class="row" style="display: none" id="skillsError">
+            <h3 style="color: red;">Ups! Something went wrong.</h2>
+        </div>
+
+        <div class="row"  id="cardData" style="display: none;">
+            <div class="d-flex justify-content-center" >
+                <div class="card" style="border: 0px;">
+                    <div class="card-body">
+                    <div class="spinner-border text-secondary" role="status">
+                        <span class="sr-only"></span>
+                    </div>
+                    loading data
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row"  id="noLetter" style="display: none;">
+            <div class="d-flex justify-content-center" >
+                <h3>you didn't type any latin letter</h3>
+            </div>
+        </div>
+
+        <div class="row"  id="noSkill" style="display: none;">
+            <h3>no skills with this letter</h3>
+        </div>
+
+    </div>
+
+    
+  </div>
+
+
+
+  <script src="app.js"></script>
+</body>
+</html>
